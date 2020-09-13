@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    fun loadFirstPage(): Flow<PagingData<Doctor>>
+    suspend fun loadFirstPage(): Flow<PagingData<Doctor>>
 
 }

@@ -1,0 +1,552 @@
+{
+  "doctors": [
+    {
+      "id": "ChIJ0_CBTCNSqEcRheFgjqqpndk",
+      "name": "Dr. med. Roman Häckl Practitioner",
+      "photoId": null,
+      "rating": 4.5,
+      "address": "Wriezener Str. 42, 13359 Berlin, Germany",
+      "lat": 52.5562452,
+      "lng": 13.3279674,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 49771007",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:15/D1T12:30",
+        "D1T14:45/D1T12:00",
+        "D2T02:15/D2T12:30",
+        "D2T14:45/D2T12:00",
+        "D3T02:15/D3T13:00",
+        "D4T02:15/D4T12:30",
+        "D4T14:45/D4T12:00",
+        "D5T02:15/D5T12:30"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJ0zdNzbgjZUER4k9hYgbxcrI",
+      "name": "Dr. med. Dorothea Kalkofen",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/16.jpeg",
+      "rating": 3.4000000953674316,
+      "address": "Leibnizstraße 20, 10625 Berlin, Germany",
+      "lat": 52.51015,
+      "lng": 13.31503,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 3124602",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJYx0RFspPqEcREqaz5TciIvQ",
+      "name": "Bernd Wenzel-Restel specialist in general medicine",
+      "photoId": null,
+      "rating": 1,
+      "address": "Kottbusser Damm 90, 10967 Berlin, Germany",
+      "lat": 52.4932161,
+      "lng": 13.422415,
+      "highlighted": false,
+      "reviewCount": 2,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 6919061",
+      "email": null,
+      "website": null,
+      "openingHours": [
+        "D1T10:00/D1T12:00",
+        "D1T15:00/D1T12:00",
+        "D2T10:00/D2T12:00",
+        "D2T15:00/D2T12:00",
+        "D3T10:00/D3T13:00",
+        "D5T10:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJk_35UvxPqEcR1HbFvN-3lAk",
+      "name": "Specialist in General Medicine Birgit Coenen de Salazar",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/17.jpeg",
+      "rating": 3.700000047623716,
+      "address": "Alt-Tempelhof 22, 12103 Berlin, Germany",
+      "lat": 52.46620000000001,
+      "lng": 13.32327,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 7061222",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T12:00",
+        "D2T09:00/D2T13:00",
+        "D3T09:00/D3T12:00",
+        "D4T09:00/D4T17:00",
+        "D5T09:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJycEm2ENQqEcRQSJfBIZAXwA",
+      "name": "Practice Dr. Peter Oblaski",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/18.jpeg",
+      "rating": 4.200000190734263,
+      "address": "Klixstraße 4, 10223 Berlin, Germany",
+      "lat": 52.4222299,
+      "lng": 13.3502477,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 7212460",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T13:00",
+        "D1T16:00/D1T12:00",
+        "D2T09:00/D2T13:00",
+        "D3T11:00/D3T14:00",
+        "D4T09:00/D4T13:00",
+        "D4T16:00/D4T12:00",
+        "D5T09:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJDfj-KiZOqEcRx-tzZfBI4aQ",
+      "name": "PRAXIS FÜR PRÄVENTIVE MEDIZIN",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/19.jpeg",
+      "rating": 4.599999904632562,
+      "address": "Neue Grünstraße 26, 10179 Berlin, Germany",
+      "lat": 52.5107027,
+      "lng": 13.4056947,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 22941457",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T13:00",
+        "D2T09:00/D2T13:00",
+        "D3T15:00/D3T12:00",
+        "D4T09:00/D4T13:00",
+        "D5T10:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJMTnk_lRQqEcR3LNoVm56O5U",
+      "name": "praevenio - Dres. med. Knur, Prack, Zürcher",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/20.jpeg",
+      "rating": 3.799999952316224,
+      "address": "Ärztehaus am Europacenter, Nürnberger Str. 67, 10727 Berlin, Germany",
+      "lat": 52.50426939999999,
+      "lng": 13.3411039,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 21220420",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:30/D1T12:00",
+        "D2T02:30/D2T12:00",
+        "D3T02:30/D3T16:00",
+        "D4T02:30/D4T12:00",
+        "D5T02:30/D5T14:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJcWo_1AFPqEcRfTBxciACSBw",
+      "name": "Dr. med. Max Bürck-Gemassmer specialist in general medicine",
+      "photoId": null,
+      "rating": 3.9000000953674316,
+      "address": "Elsenstraße 1, 12435 Berlin, Germany",
+      "lat": 52.4939223,
+      "lng": 13.4592921,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 5342694",
+      "email": null,
+      "website": null,
+      "openingHours": [
+        "D1T09:00/D1T12:00",
+        "D1T15:00/D1T12:00",
+        "D2T09:00/D2T12:00",
+        "D3T09:00/D3T12:00",
+        "D4T09:00/D4T12:00",
+        "D4T15:00/D4T12:00",
+        "D5T09:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJO1HulQFSqEcR35NxeATmjIQ",
+      "name": "Dr. med. Petra Beitlich",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/21.jpeg",
+      "rating": 4.699999209265137,
+      "address": "Schönhauser Allee 137, 10437 Berlin, Germany",
+      "lat": 52.5435506,
+      "lng": 13.4119947,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 60055544",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:30/D1T12:30",
+        "D2T02:30/D2T12:30",
+        "D3T02:30/D3T12:30",
+        "D4T02:30/D4T12:30",
+        "D5T02:30/D5T12:30"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJHyVkIIFRqEcRDmpzZ-etRIQ",
+      "name": "Dr. med. Manuel Kociok",
+      "photoId": null,
+      "rating": 4.5,
+      "address": "Gerichtstraße 44, 13347 Berlin, Germany",
+      "lat": 52.54502629999999,
+      "lng": 13.3627761,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 4651960",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T15:00",
+        "D3T09:00/D3T13:00",
+        "D4T12:00/D4T12:00",
+        "D5T02:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJfx3s-NtQqEcROyBptD24F7M",
+      "name": "Dr. med. Alexander Mach",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/22.jpeg",
+      "rating": 4.199999209265137,
+      "address": "Große Hamburger Str. 5, 10115 Berlin, Germany",
+      "lat": 52.5264922,
+      "lng": 13.3923392,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 2423216",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T13:00",
+        "D1T15:00/D1T12:00",
+        "D2T14:00/D2T12:00",
+        "D3T09:00/D3T13:00",
+        "D4T09:00/D4T13:00",
+        "D4T15:00/D4T16:00",
+        "D5T09:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJWxMhygVOqEcRQJ6HDxB3MIw",
+      "name": "Martina Schreen Allgemeinmedizin Hausarzt Berlin",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/23.jpeg",
+      "rating": 4.199999209265137,
+      "address": "Winsstraße 56, 10405 Berlin, Germany",
+      "lat": 52.5340725,
+      "lng": 13.4251234,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 4425141",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:00/D1T13:00",
+        "D1T15:00/D1T12:00",
+        "D2T02:00/D2T13:00",
+        "D3T02:00/D3T13:00",
+        "D4T13:00/D4T12:00",
+        "D5T02:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJgREH279QqEcRC1UtfIH9xgU",
+      "name": "Dr. Johanna Morguet & Sahar Abdul Majeed",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/24.jpeg",
+      "rating": 4.5,
+      "address": "Warmbrunner Str. 44, 14193 Berlin, Germany",
+      "lat": 52.42611320000001,
+      "lng": 13.2949103,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 2252066",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:00/D1T12:00",
+        "D1T17:00/D1T19:00",
+        "D2T02:00/D2T12:00",
+        "D4T02:00/D4T12:00",
+        "D4T16:00/D4T12:00",
+        "D5T02:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJKeNHS9dRqEcROSTe-MgeHV2",
+      "name": "Dr.med. Lutz Weißenborn",
+      "photoId": null,
+      "rating": 0,
+      "address": "Leipziger Str. 40, 10117 Berlin, Germany",
+      "lat": 52.51039,
+      "lng": 13.39406,
+      "highlighted": false,
+      "reviewCount": null,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 2027122",
+      "email": null,
+      "website": null,
+      "openingHours": [],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJtZ6h6mdOqEcRabUmRc0OMdE",
+      "name": "Praxisteam Friedrichshain",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/25.jpeg",
+      "rating": 3.799999952316224,
+      "address": "Petersburger Str. 94, 10247 Berlin, Germany",
+      "lat": 52.51711460000001,
+      "lng": 13.4531792,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 420224770",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T13:00",
+        "D1T14:00/D1T12:00",
+        "D2T09:00/D2T13:00",
+        "D2T14:00/D2T12:00",
+        "D3T09:00/D3T14:00",
+        "D4T09:00/D4T13:00",
+        "D4T14:00/D4T12:00",
+        "D5T09:00/D5T14:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJMdURqIBRqEcRIIpA9o4iANE",
+      "name": "Dr. med. Annedore Mette",
+      "photoId": null,
+      "rating": 4.599999904632562,
+      "address": "Schulstraße 12, 13347 Berlin, Germany",
+      "lat": 52.54246010000001,
+      "lng": 13.3632243,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 4690950",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T12:00",
+        "D1T15:00/D1T12:00",
+        "D2T09:00/D2T13:00",
+        "D3T14:00/D3T19:00",
+        "D4T09:00/D4T13:00",
+        "D5T09:00/D5T13:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJbfkj_1RQqEcRvrkBYESgTyU",
+      "name": "Herr Gerhard Kaiser",
+      "photoId": null,
+      "rating": 0,
+      "address": "Nürnberger Str. 67, 10727 Berlin, Germany",
+      "lat": 52.50444239999999,
+      "lng": 13.3410301,
+      "highlighted": false,
+      "reviewCount": null,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 21220420",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:30/D1T12:00",
+        "D2T02:30/D2T12:00",
+        "D3T02:30/D3T16:00",
+        "D4T02:30/D4T12:00",
+        "D5T02:30/D5T14:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJ196svU1OqEcROuNk1Nj2hg0",
+      "name": "Herr Heiko Janssen",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/26.jpeg",
+      "rating": 4,
+      "address": "Oppelner Str. 32, 10997 Berlin, Germany",
+      "lat": 52.4929919,
+      "lng": 13.440302,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 6123031",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T02:30/D1T12:00",
+        "D1T15:30/D1T12:00",
+        "D2T02:30/D2T12:00",
+        "D2T15:30/D2T12:00",
+        "D3T02:30/D3T12:00",
+        "D3T13:00/D3T15:00",
+        "D4T02:30/D4T12:00",
+        "D4T15:30/D4T12:00",
+        "D5T02:30/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJoU-PIgdOqEcRPrN2wdNcIxY",
+      "name": "Praxis Prenzlauer Berg",
+      "photoId": "https://vivy.com/interviews/challenges/android/img/people/27.jpeg",
+      "rating": 3.9000000953674316,
+      "address": "Danziger Str. 72b, 10405 Berlin, Germany",
+      "lat": 52.5325906,
+      "lng": 13.4249922,
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 44039972",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T09:00/D1T15:00",
+        "D2T15:00/D2T20:00",
+        "D3T10:00/D3T15:00",
+        "D4T15:00/D4T20:00",
+        "D5T10:00/D5T14:00"
+      ],
+      "integration": null,
+      "translation": null
+    },
+    {
+      "id": "ChIJW1k-mNpRqEcRXwfSbnHzvPA",
+      "name": "Praxis für Kardiologie und Innere Medizin - Dr. med. Andreas Fried",
+      "photoId": null,
+      "rating": 0,
+      "address": "Friedrichstraße 120, 10117 Berlin, Germany",
+      "lat": 52.512744,
+      "lng": 13.329254,
+      "highlighted": false,
+      "reviewCount": null,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+49 30 226226409",
+      "email": null,
+      "website": null,
+      "openingHours": [
+        "D1T09:00/D1T12:00",
+        "D2T09:00/D2T12:00",
+        "D3T09:00/D3T12:00",
+        "D4T09:00/D4T12:00",
+        "D5T09:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    }
+  ],
+  "lastKey": "dJiBHLZjYWs6iSqb"
+}

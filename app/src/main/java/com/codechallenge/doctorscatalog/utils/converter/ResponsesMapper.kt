@@ -11,6 +11,7 @@ class ResponsesMapper @Inject constructor() {
         for (doctor in apiResponse.doctors) {
             doctorsList.add(
                 Doctor(
+                    id = doctor.id,
                     name = doctor.name,
                     address = doctor.address,
                     picture = doctor.photoId

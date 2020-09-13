@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Doctors catalog</string>
+    <string name="header">Header</string>
 </resources>

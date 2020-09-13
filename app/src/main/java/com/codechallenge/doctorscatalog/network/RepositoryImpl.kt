@@ -18,7 +18,7 @@ class RepositoryImpl @Inject constructor() : Repository {
     @Inject
     lateinit var mapper: ResponsesMapper
 
-    override fun loadFirstPage(): Flow<PagingData<Doctor>> {
+    override suspend fun loadFirstPage(): Flow<PagingData<Doctor>> {
         val pagingSource = DoctorsFlowPagingSource(networkService, mapper)
         return Pager(
             config = PagingConfig(

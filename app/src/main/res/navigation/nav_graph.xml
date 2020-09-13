@@ -22,14 +22,14 @@
         <argument
             android:name="name"
             app:argType="string"
-            android:defaultValue='""' />
+            app:nullable="true" />
         <argument
             android:name="address"
             app:argType="string"
-            android:defaultValue='""' />
+            app:nullable="true" />
         <argument
             android:name="picture"
             app:argType="string"
-            android:defaultValue='""' />
+            app:nullable="true" />
     </fragment>
 </navigation>
