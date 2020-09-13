@@ -4,13 +4,12 @@ import androidx.paging.PagingSource
 import com.codechallenge.doctorscatalog.data.model.api.ApiResponse
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
 import com.codechallenge.doctorscatalog.utils.converter.ResponsesMapper
-import java.lang.Exception
 import javax.inject.Inject
 
 class DoctorsFlowPagingSource @Inject constructor(
     private val networkService: RepositoryService,
     private val mapper: ResponsesMapper
-): PagingSource<String, Doctor>() {
+) : PagingSource<String, Doctor>() {
     override suspend fun load(params: LoadParams<String>): LoadResult<String, Doctor> {
         return try {
             if (params.key.isNullOrEmpty()) {

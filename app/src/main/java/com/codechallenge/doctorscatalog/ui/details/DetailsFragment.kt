@@ -4,15 +4,29 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
+import coil.api.load
+import coil.size.Scale
+import coil.transform.RoundedCornersTransformation
 import com.codechallenge.doctorscatalog.R
+import com.codechallenge.doctorscatalog.databinding.DetailsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment(R.layout.details_fragment), LifecycleOwner {
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val name = requireArguments().getString("name", "")
         val address = requireArguments().getString("address", "")
-        val picture = requireArguments().getString("picture", "")
+        val picture = requireArguments().getString("picture")
+        val binding = DetailsFragmentBinding.bind(view)
+        binding.photoIv.load(picture) {
+            scale(Scale.FIT)
+            placeholder(R.drawable.doctor_icon)
+            fallback(R.drawable.doctor_icon)
+            transformations(RoundedCornersTransformation(16F))
+        }
+        binding.nameTv.text = name
+        binding.addressTv.text = address
     }
 }

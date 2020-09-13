@@ -7,5 +7,6 @@ data class Doctor(
     val id: String,
     val name: String?,
     val address: String?,
-    val picture: String?
+    val picture: String?,
+    val rating: Float?
 )

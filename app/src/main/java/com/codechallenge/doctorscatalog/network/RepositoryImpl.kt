@@ -24,7 +24,8 @@ class RepositoryImpl @Inject constructor() : Repository {
             config = PagingConfig(
                 pageSize = 20,
                 enablePlaceholders = true,
-                prefetchDistance = 10
+                prefetchDistance = 10,
+                initialLoadSize = 1
             ),
             pagingSourceFactory = { pagingSource }
         ).flow

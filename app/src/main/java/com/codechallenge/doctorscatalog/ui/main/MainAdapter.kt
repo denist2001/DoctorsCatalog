@@ -1,6 +1,7 @@
 package com.codechallenge.doctorscatalog.ui.main
 
 import android.view.ViewGroup
+import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +13,7 @@ import javax.inject.Inject
 class MainAdapter @Inject constructor() :
     PagingDataAdapter<Doctor, RecyclerView.ViewHolder>(DiffCallback()) {
 
-    private var visitedDoctorList: ArrayList<Doctor> = ArrayList()
+     var visitedDoctorList: ArrayList<Doctor> = ArrayList()
     private lateinit var clickFlowCollector: (doctor: Doctor) -> Unit
 
     @ExperimentalCoroutinesApi
@@ -54,9 +55,24 @@ class MainAdapter @Inject constructor() :
         clickFlowCollector = clickCollector
     }
 
-    fun setVisitedDoctorList(newVisitedDoctorList: List<Doctor>) {
+    suspend fun setVisitedDoctorList(newVisitedDoctorList: List<Doctor>) {
+        val snapshot = ArrayList<Doctor>()
+        for (doctor in snapshot()) {
+            doctor?.let { snapshot.add(it) }
+        }
         visitedDoctorList.clear()
         visitedDoctorList.addAll(newVisitedDoctorList)
+        var index = -1
+        for (doctor in visitedDoctorList) {
+            if (snapshot.contains(doctor)) {
+                index = snapshot.indexOf(doctor)
+                snapshot.removeAt(index)
+            }
+        }
+        if (index >= 0) {
+            submitData(PagingData.from(snapshot))
+            notifyItemChanged(index + 3)
+        }
     }
 }
 

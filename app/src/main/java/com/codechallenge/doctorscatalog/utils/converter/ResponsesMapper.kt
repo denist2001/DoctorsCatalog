@@ -14,9 +14,13 @@ class ResponsesMapper @Inject constructor() {
                     id = doctor.id,
                     name = doctor.name,
                     address = doctor.address,
-                    picture = doctor.photoId
+                    picture = doctor.photoId,
+                    rating = doctor.rating
                 )
             )
+        }
+        doctorsList.sortByDescending { doctor ->
+            doctor.rating
         }
         return doctorsList
     }
