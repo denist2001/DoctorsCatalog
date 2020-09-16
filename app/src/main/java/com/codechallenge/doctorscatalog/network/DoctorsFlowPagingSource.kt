@@ -4,6 +4,7 @@ import androidx.paging.PagingSource
 import com.codechallenge.doctorscatalog.data.model.api.ApiResponse
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
 import com.codechallenge.doctorscatalog.utils.converter.ResponsesMapper
+import com.google.gson.JsonSyntaxException
 import javax.inject.Inject
 
 class DoctorsFlowPagingSource @Inject constructor(
@@ -21,14 +22,18 @@ class DoctorsFlowPagingSource @Inject constructor(
                     transformResult(this)
                 }
             }
+        } catch (exception: JsonSyntaxException) {
+            return LoadResult.Error(Throwable("Result can not be parsed"))
         } catch (exception: Exception) {
-            return LoadResult.Error(exception)
+            return LoadResult.Error(Throwable("Network error"))
         }
     }
 
     private fun transformResult(apiResponse: ApiResponse): LoadResult<String, Doctor> {
         val doctors = mapper.transform(apiResponse)
-        if (doctors.isEmpty()) return LoadResult.Error(Throwable("Result can not be parsed"))
+        if (doctors.isEmpty()) {
+            return LoadResult.Error(Throwable("Result can not be parsed"))
+        }
         return LoadResult.Page(
             data = doctors,
             prevKey = null,//starts from the first page

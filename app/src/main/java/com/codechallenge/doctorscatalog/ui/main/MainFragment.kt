@@ -5,6 +5,7 @@ import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.widget.SearchView.OnQueryTextListener
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
@@ -17,11 +18,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.codechallenge.doctorscatalog.R
 import com.codechallenge.doctorscatalog.databinding.MainFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.InternalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.distinctUntilChangedBy
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@InternalCoroutinesApi
 @AndroidEntryPoint
 class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
 
@@ -29,9 +35,9 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
     lateinit var mainAdapter: MainAdapter
 
     private lateinit var binding: MainFragmentBinding
+    private lateinit var linearLayoutManager: LinearLayoutManager
     private val viewModel by viewModels<MainViewModel>()
     private var lastTime = 0L
-    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -61,7 +67,9 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // It's bad idea to send requests on each symbol
+                if (!newText.isNullOrEmpty()) {
+                    searchDoctor(newText)
+                }
                 return true
             }
         })
@@ -70,7 +78,7 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
     private fun setupRecyclerView() {
         mainAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
-        with(doctors_list_rv) {
+        with(binding.doctorsListRv) {
             adapter = mainAdapter
             layoutManager = linearLayoutManager
         }
@@ -95,6 +103,23 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
                     is LoadState.Error -> INVISIBLE
                 }
             }
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            mainAdapter.loadStateFlow.collectLatest { loadState ->
+                val errorMessage = (loadState.refresh as? LoadState.Error)?.error?.message
+                if (!errorMessage.isNullOrBlank()) {
+                    Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+        viewLifecycleOwner.lifecycleScope.launchWhenCreated {
+            @OptIn(FlowPreview::class)
+            mainAdapter.loadStateFlow
+                // Only emit when REFRESH LoadState for RemoteMediator changes.
+                .distinctUntilChangedBy { it.refresh }
+                // Only react to cases where Remote REFRESH completes i.e., NotLoading.
+                .filter { it.refresh is LoadState.NotLoading }
+                .collect() { binding.doctorsListRv.scrollToPosition(0) }
         }
     }
 

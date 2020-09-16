@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.codechallenge.doctorscatalog.MainTestRunner"
     }
 
     buildTypes {
@@ -42,6 +42,10 @@ android {
     dataBinding {
         enabled = true
     }
+}
+
+kapt {
+    correctErrorTypes true
 }
 
 dependencies {
@@ -71,12 +75,33 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     //image downloading tools
     implementation "io.coil-kt:coil:$coil_version"
+    //correct instantiating of MockWebServer
+    implementation "com.squareup.okhttp3:logging-interceptor:$mockwebserver_version"
 
     // unit tests
     testImplementation 'junit:junit:4.13'
 
     // integration tests
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_version"
+    // manipulation with recyclerview
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso_version"
+    // allow to wait conditions
+    androidTestImplementation 'org.awaitility:awaitility-kotlin:3.1.1'
+    // allow managing UI device conditions
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    // dependency injection test tool
+    androidTestImplementation  "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    // mock service for kotlin
+    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$mockito_version"
+    // network mock
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserver_version"
+    // grant permissions rule
+    androidTestImplementation "androidx.test:rules:$androidx_test_version"
+    androidTestImplementation "androidx.test:runner:$androidx_test_version"
+    // navigation test
+    androidTestImplementation "androidx.navigation:navigation-testing:$navigation_version"
 }

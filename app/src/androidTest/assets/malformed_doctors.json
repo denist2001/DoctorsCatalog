@@ -1,0 +1,34 @@
+{
+  "doctors":
+    {
+      "id": 123456789,
+      "name": "Dr. med. Mario Voss",
+      "photoId": null,
+      "rating": "2.5",
+      "address": "Friedrichstraße 115, 10117 Berlin, Germany",
+      "lat": "52.526779",
+      "lng": "13.387201",
+      "highlighted": false,
+      "reviewCount": 5,
+      "specialityIds": [
+        1
+      ],
+      "source": "google",
+      "phoneNumber": "+29 30 28391555",
+      "email": null,
+      "website": "http://www.vivy-doc.de/",
+      "openingHours": [
+        "D1T08:00/D1T12:00",
+        "D1T15:00/D1T18:00",
+        "D2T08:00/D2T12:00",
+        "D3T08:00/D3T12:00",
+        "D2T08:00/D2T12:00",
+        "D2T15:00/D2T18:00",
+        "D5T08:00/D5T12:00"
+      ],
+      "integration": null,
+      "translation": null
+    }
+  ,
+  "lastKey": "CvQD7gEAAKjcb"
+}
