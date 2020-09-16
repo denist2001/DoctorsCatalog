@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.main
+package com.codechallenge.doctorscatalog.ui.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
@@ -7,12 +7,12 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
-import com.codechallenge.doctorscatalog.network.RepositoryImpl
+import com.codechallenge.doctorscatalog.network.Repository
 import kotlinx.coroutines.flow.Flow
 import java.util.*
 
 class MainViewModel @ViewModelInject constructor(
-    private val repository: RepositoryImpl
+    private val repository: Repository
 ) : ViewModel() {
 
     val visitedDoctorLiveData = MutableLiveData<List<Doctor>>()

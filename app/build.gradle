@@ -80,6 +80,13 @@ dependencies {
 
     // unit tests
     testImplementation 'junit:junit:4.13'
+    // coroutine test
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+    // mock service for kotlin
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.mockito:mockito-android:$mockito_version"
+    // Looper mocking
+    testImplementation "androidx.arch.core:core-testing:$androidx_arch_version"
 
     // integration tests
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.main
+package com.codechallenge.doctorscatalog.ui.adapter
 
 import android.view.ViewGroup
 import androidx.paging.PagingData
@@ -6,6 +6,9 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
+import com.codechallenge.doctorscatalog.ui.viewholder.HeaderViewHolder
+import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.viewholder.VisitedViewHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
@@ -72,6 +75,25 @@ class MainAdapter @Inject constructor() :
         if (index >= 0) {
             submitData(PagingData.from(snapshot))
             notifyItemChanged(index + 3)
+        }
+    }
+
+    fun searchDoctor(query: String, scrollTo: (position: Int) -> Unit) {
+        val snapshot = snapshot()
+        var isFound = false
+        for (index in 0..snapshot.lastIndex) {
+            val currentDoctor = snapshot[index]
+            currentDoctor?.let { doctor ->
+                doctor.name?.let { name ->
+                    if (name.contains(query, true)) {
+                        scrollTo.invoke(index)
+                        isFound = true
+                        return@let
+                    }
+                }
+                if (isFound) return@let
+            }
+            if (isFound) return
         }
     }
 }

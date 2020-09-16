@@ -7,8 +7,8 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.codechallenge.doctorscatalog.di.NetworkModule
-import com.codechallenge.doctorscatalog.ui.main.HeaderViewHolder
-import com.codechallenge.doctorscatalog.ui.main.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.viewholder.HeaderViewHolder
+import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
 import com.codechallenge.doctorscatalog.utils.getStringFrom
 import com.codechallenge.doctorscatalog.utils.recyclerItemAtPosition
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithId

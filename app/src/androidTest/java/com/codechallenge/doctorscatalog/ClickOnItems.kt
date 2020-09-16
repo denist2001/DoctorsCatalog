@@ -10,7 +10,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.codechallenge.doctorscatalog.di.NetworkModule
-import com.codechallenge.doctorscatalog.ui.main.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
 import com.codechallenge.doctorscatalog.utils.getStringFrom
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithId
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithText

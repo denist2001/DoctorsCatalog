@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.main
+package com.codechallenge.doctorscatalog.ui.viewholder
 
 import android.view.LayoutInflater
 import android.view.View

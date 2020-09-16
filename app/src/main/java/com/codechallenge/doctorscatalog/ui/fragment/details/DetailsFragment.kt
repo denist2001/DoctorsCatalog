@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.details
+package com.codechallenge.doctorscatalog.ui.fragment.details
 
 import android.os.Bundle
 import android.view.View

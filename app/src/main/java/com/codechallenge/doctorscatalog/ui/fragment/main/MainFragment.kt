@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.main
+package com.codechallenge.doctorscatalog.ui.fragment.main
 
 import android.os.Bundle
 import android.view.View
@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codechallenge.doctorscatalog.R
 import com.codechallenge.doctorscatalog.databinding.MainFragmentBinding
+import com.codechallenge.doctorscatalog.ui.adapter.MainAdapter
+import com.codechallenge.doctorscatalog.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -61,14 +63,18 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
         binding.searchDoctorSv.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (!query.isNullOrEmpty()) {
-                    searchDoctor(query)
+                    mainAdapter.searchDoctor(query) { index ->
+                        linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
+                    }
                 }
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (!newText.isNullOrEmpty()) {
-                    searchDoctor(newText)
+                    mainAdapter.searchDoctor(newText) { index ->
+                        linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
+                    }
                 }
                 return true
             }
@@ -140,24 +146,5 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
                     }
                 }
             })
-    }
-
-    private fun searchDoctor(query: String) {
-        val snapshot = mainAdapter.snapshot()
-        var isFound = false
-        for (index in 0..snapshot.lastIndex) {
-            val currentDoctor = snapshot[index]
-            currentDoctor?.let { doctor ->
-                doctor.name?.let { name ->
-                    if (name.contains(query, true)) {
-                        linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
-                        isFound = true
-                        return@let
-                    }
-                }
-                if (isFound) return@let
-            }
-            if (isFound) return
-        }
     }
 }

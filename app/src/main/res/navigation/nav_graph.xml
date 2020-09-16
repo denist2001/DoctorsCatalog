@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.codechallenge.doctorscatalog.ui.main.MainFragment"
+        android:name="com.codechallenge.doctorscatalog.ui.fragment.main.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.codechallenge.doctorscatalog.ui.details.DetailsFragment"
+        android:name="com.codechallenge.doctorscatalog.ui.fragment.details.DetailsFragment"
         android:label="DetailsFragment" >
         <argument
             android:name="name"
