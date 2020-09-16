@@ -35,7 +35,6 @@ class MainFragment : Fragment(R.layout.main_fragment) {
     private lateinit var binding: MainFragmentBinding
     private lateinit var linearLayoutManager: LinearLayoutManager
     private val viewModel by viewModels<MainViewModel>()
-    private var lastTime = 0L
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
