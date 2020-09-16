@@ -62,19 +62,15 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
         }
         binding.searchDoctorSv.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if (!query.isNullOrEmpty()) {
-                    mainAdapter.searchDoctor(query) { index ->
-                        linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
-                    }
+                viewLifecycleOwner.lifecycleScope.launch {
+                    searchDoctorBy(query)
                 }
                 return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (!newText.isNullOrEmpty()) {
-                    mainAdapter.searchDoctor(newText) { index ->
-                        linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
-                    }
+                viewLifecycleOwner.lifecycleScope.launch {
+                    searchDoctorBy(newText)
                 }
                 return true
             }
@@ -146,5 +142,13 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
                     }
                 }
             })
+    }
+
+    private fun searchDoctorBy(query: String?) {
+        if (!query.isNullOrEmpty()) {
+            mainAdapter.searchDoctor(query) { index ->
+                linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
+            }
+        }
     }
 }
