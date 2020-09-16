@@ -3,14 +3,14 @@ package com.codechallenge.doctorscatalog
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import com.codechallenge.doctorscatalog.di.NetworkModule
-import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.home.viewholder.ItemViewHolder
 import com.codechallenge.doctorscatalog.utils.getStringFrom
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithId
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithText
@@ -58,7 +58,7 @@ class ClickOnItems {
 
         waitUntilViewWithId(R.id.doctors_list_rv, 5, isDisplayed())
         waitUntilViewWithText("Gemeinschaftspraxis Dr. Hintsche und Dr. Klausen", 5, isDisplayed())
-        onView(withId(R.id.doctors_list_rv)).perform(RecyclerViewActions.actionOnItemAtPosition<ItemViewHolder>(3, click()))
+        onView(withId(R.id.doctors_list_rv)).perform(actionOnItemAtPosition<ItemViewHolder>(3, click()))
         waitUntilViewWithId(R.id.name_tv, 5, isDisplayed())
         waitUntilViewWithText("Gemeinschaftspraxis Dr. Hintsche und Dr. Klausen", 5, isDisplayed())
     }
@@ -73,7 +73,7 @@ class ClickOnItems {
 
         waitUntilViewWithId(R.id.doctors_list_rv, 5, isDisplayed())
         waitUntilViewWithText("Gemeinschaftspraxis Dr. Hintsche und Dr. Klausen", 15, isDisplayed())
-        onView(withId(R.id.doctors_list_rv)).perform(RecyclerViewActions.actionOnItemAtPosition<ItemViewHolder>(3, click()))
+        onView(withId(R.id.doctors_list_rv)).perform(actionOnItemAtPosition<ItemViewHolder>(3, click()))
         waitUntilViewWithId(R.id.name_tv, 15, isDisplayed())
         waitUntilViewWithText("Gemeinschaftspraxis Dr. Hintsche und Dr. Klausen", 15, isDisplayed())
         pressBack()

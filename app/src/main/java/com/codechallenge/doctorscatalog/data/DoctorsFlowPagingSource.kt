@@ -1,9 +1,9 @@
-package com.codechallenge.doctorscatalog.network
+package com.codechallenge.doctorscatalog.data
 
 import androidx.paging.PagingSource
 import com.codechallenge.doctorscatalog.data.model.api.ApiResponse
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
-import com.codechallenge.doctorscatalog.utils.converter.ResponsesMapper
+import com.codechallenge.doctorscatalog.utils.ResponsesMapper
 import com.google.gson.JsonSyntaxException
 import javax.inject.Inject
 

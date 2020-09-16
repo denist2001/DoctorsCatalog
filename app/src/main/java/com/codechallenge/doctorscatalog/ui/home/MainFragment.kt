@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.ui.fragment.main
+package com.codechallenge.doctorscatalog.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,6 @@ import android.widget.SearchView.OnQueryTextListener
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
@@ -17,10 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codechallenge.doctorscatalog.R
 import com.codechallenge.doctorscatalog.databinding.MainFragmentBinding
-import com.codechallenge.doctorscatalog.ui.adapter.MainAdapter
-import com.codechallenge.doctorscatalog.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -31,7 +27,7 @@ import javax.inject.Inject
 
 @InternalCoroutinesApi
 @AndroidEntryPoint
-class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
+class MainFragment : Fragment(R.layout.main_fragment) {
 
     @Inject
     lateinit var mainAdapter: MainAdapter
@@ -51,14 +47,8 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
     }
 
     private fun setupSearchDoctor() {
-        var isSearchEnabled = false
-        binding.searchDoctorBn.setOnClickListener { view ->
-            isSearchEnabled = !isSearchEnabled
-            if (isSearchEnabled) {
-                binding.searchDoctorSv.visibility = VISIBLE
-            } else {
-                binding.searchDoctorSv.visibility = INVISIBLE
-            }
+        binding.searchDoctorBn.setOnClickListener {
+            viewModel.searchDoctorPressed()
         }
         binding.searchDoctorSv.setOnQueryTextListener(object : OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -84,18 +74,9 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
             adapter = mainAdapter
             layoutManager = linearLayoutManager
         }
-        mainAdapter.setClickCollector { doctor ->
-            val currentTime = System.currentTimeMillis()
-            if (currentTime - lastTime >= 1000) {
-                lastTime = currentTime
-                viewModel.addLastVisitedDoctor(doctor)
-                val direction = MainFragmentDirections.actionMainFragmentToDetailsFragment(
-                    name = doctor.name,
-                    address = doctor.address,
-                    picture = doctor.picture
-                )
-                findNavController().navigate(direction)
-            }
+        mainAdapter.setClickCollector { doctor, direction ->
+            viewModel.addLastVisitedDoctor(doctor)
+            findNavController().navigate(direction)
         }
         viewLifecycleOwner.lifecycleScope.launch {
             mainAdapter.loadStateFlow.collectLatest { loadState ->
@@ -115,13 +96,10 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
             }
         }
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
-            @OptIn(FlowPreview::class)
             mainAdapter.loadStateFlow
-                // Only emit when REFRESH LoadState for RemoteMediator changes.
                 .distinctUntilChangedBy { it.refresh }
-                // Only react to cases where Remote REFRESH completes i.e., NotLoading.
                 .filter { it.refresh is LoadState.NotLoading }
-                .collect() { binding.doctorsListRv.scrollToPosition(0) }
+                .collect { binding.doctorsListRv.scrollToPosition(0) }
         }
     }
 
@@ -142,6 +120,14 @@ class MainFragment : Fragment(R.layout.main_fragment), LifecycleOwner {
                     }
                 }
             })
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.showSearchView.observe(
+                viewLifecycleOwner,
+                { visibility ->
+                    binding.searchDoctorSv.visibility = visibility
+                }
+            )
+        }
     }
 
     private fun searchDoctorBy(query: String?) {

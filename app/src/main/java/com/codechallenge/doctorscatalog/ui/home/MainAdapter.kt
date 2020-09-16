@@ -1,14 +1,15 @@
-package com.codechallenge.doctorscatalog.ui.adapter
+package com.codechallenge.doctorscatalog.ui.home
 
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
 import androidx.paging.PagingData
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
-import com.codechallenge.doctorscatalog.ui.viewholder.HeaderViewHolder
-import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
-import com.codechallenge.doctorscatalog.ui.viewholder.VisitedViewHolder
+import com.codechallenge.doctorscatalog.ui.home.viewholder.HeaderViewHolder
+import com.codechallenge.doctorscatalog.ui.home.viewholder.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.home.viewholder.VisitedViewHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
@@ -16,8 +17,8 @@ import javax.inject.Inject
 class MainAdapter @Inject constructor() :
     PagingDataAdapter<Doctor, RecyclerView.ViewHolder>(DiffCallback()) {
 
-     var visitedDoctorList: ArrayList<Doctor> = ArrayList()
-    private lateinit var clickFlowCollector: (doctor: Doctor) -> Unit
+    var visitedDoctorList: ArrayList<Doctor> = ArrayList()
+    private lateinit var clickFlowCollector: (doctor: Doctor, direction: NavDirections) -> Unit
 
     @ExperimentalCoroutinesApi
     @InternalCoroutinesApi
@@ -54,7 +55,7 @@ class MainAdapter @Inject constructor() :
         return super.getItemCount() + 3 //header visited doctors + visited doctors + header Vivy doctors
     }
 
-    fun setClickCollector(clickCollector: (doctor: Doctor) -> Unit) {
+    fun setClickCollector(clickCollector: (doctor: Doctor, direction: NavDirections) -> Unit) {
         clickFlowCollector = clickCollector
     }
 

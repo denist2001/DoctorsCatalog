@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.utils.view
+package com.codechallenge.doctorscatalog.utils
 
 import android.view.View
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,9 +1,8 @@
-package com.codechallenge.doctorscatalog.ui.fragment.details
+package com.codechallenge.doctorscatalog.ui.details
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import coil.api.load
 import coil.size.Scale
 import coil.transform.RoundedCornersTransformation
@@ -12,7 +11,7 @@ import com.codechallenge.doctorscatalog.databinding.DetailsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailsFragment : Fragment(R.layout.details_fragment), LifecycleOwner {
+class DetailsFragment : Fragment(R.layout.details_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

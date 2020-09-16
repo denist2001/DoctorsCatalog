@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.network
+package com.codechallenge.doctorscatalog.data
 
 import com.codechallenge.doctorscatalog.data.model.api.ApiResponse
 import retrofit2.http.*

@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.utils.map
+package com.codechallenge.doctorscatalog.utils
 
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.Flow

@@ -9,7 +9,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import androidx.test.uiautomator.UiDevice
 import com.codechallenge.doctorscatalog.di.NetworkModule
-import com.codechallenge.doctorscatalog.ui.viewholder.ItemViewHolder
+import com.codechallenge.doctorscatalog.ui.home.viewholder.ItemViewHolder
 import com.codechallenge.doctorscatalog.utils.getStringFrom
 import com.codechallenge.doctorscatalog.utils.recyclerItemAtPosition
 import com.codechallenge.doctorscatalog.utils.waitUntilViewWithId

@@ -3,7 +3,8 @@ package com.codechallenge.doctorscatalog.ui.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor
-import com.codechallenge.doctorscatalog.network.Repository
+import com.codechallenge.doctorscatalog.domain.Repository
+import com.codechallenge.doctorscatalog.ui.home.MainViewModel
 import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule

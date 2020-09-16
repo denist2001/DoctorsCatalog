@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.network
+package com.codechallenge.doctorscatalog.domain
 
 import androidx.paging.PagingData
 import com.codechallenge.doctorscatalog.data.model.presentation.Doctor

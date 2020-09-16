@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.utils.converter
+package com.codechallenge.doctorscatalog.utils
 
 import com.codechallenge.doctorscatalog.TestApiResponse
 import com.codechallenge.doctorscatalog.data.model.api.ApiDoctor

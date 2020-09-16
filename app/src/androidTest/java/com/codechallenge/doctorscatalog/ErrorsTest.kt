@@ -1,6 +1,6 @@
 package com.codechallenge.doctorscatalog
 
-import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers
@@ -17,7 +17,8 @@ import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.RecordedRequest
-import org.hamcrest.Matchers
+import org.hamcrest.Matchers.`is`
+import org.hamcrest.Matchers.not
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -82,11 +83,11 @@ class ErrorsTest {
     }
 
     private fun checkToast(message: String) {
-        Espresso.onView(ViewMatchers.withText(message))
+        onView(ViewMatchers.withText(message))
             .inRoot(
                 RootMatchers.withDecorView(
-                    Matchers.not(
-                        Matchers.`is`(
+                    not(
+                        `is`(
                             activityTestRule.activity.window.decorView
                         )
                     )

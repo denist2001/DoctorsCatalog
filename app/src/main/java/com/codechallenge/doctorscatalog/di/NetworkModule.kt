@@ -1,8 +1,8 @@
 package com.codechallenge.doctorscatalog.di
 
-import com.codechallenge.doctorscatalog.network.Repository
-import com.codechallenge.doctorscatalog.network.RepositoryImpl
-import com.codechallenge.doctorscatalog.network.RepositoryService
+import com.codechallenge.doctorscatalog.domain.Repository
+import com.codechallenge.doctorscatalog.data.RepositoryImpl
+import com.codechallenge.doctorscatalog.data.RepositoryService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

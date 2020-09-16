@@ -1,12 +1,15 @@
 package com.codechallenge.doctorscatalog
 
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import androidx.test.uiautomator.UiDevice
 import com.codechallenge.doctorscatalog.di.NetworkModule
-import com.codechallenge.doctorscatalog.utils.*
+import com.codechallenge.doctorscatalog.utils.getStringFrom
+import com.codechallenge.doctorscatalog.utils.waitUntilProgressBarAppears
+import com.codechallenge.doctorscatalog.utils.waitUntilProgressBarDisappears
+import com.codechallenge.doctorscatalog.utils.waitUntilViewWithId
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
@@ -45,7 +48,7 @@ class ProgressBarTest {
         setDispatcher("doctors.json", 200)
         activityTestRule.launchActivity(null)
         waitUntilProgressBarAppears(R.id.progress_pb, 1000)
-        waitUntilViewWithId(R.id.doctors_list_rv, 5, ViewMatchers.isDisplayed())
+        waitUntilViewWithId(R.id.doctors_list_rv, 5, isDisplayed())
         waitUntilProgressBarDisappears(R.id.progress_pb, 1000)
     }
 
@@ -54,7 +57,7 @@ class ProgressBarTest {
         setDispatcher("empty.json", 200)
         activityTestRule.launchActivity(null)
         waitUntilProgressBarAppears(R.id.progress_pb, 1000)
-        waitUntilViewWithId(R.id.doctors_list_rv, 5, ViewMatchers.isDisplayed())
+        waitUntilViewWithId(R.id.doctors_list_rv, 5, isDisplayed())
         waitUntilProgressBarDisappears(R.id.progress_pb, 1000)
     }
 

@@ -1,4 +1,4 @@
-package com.codechallenge.doctorscatalog.utils.map
+package com.codechallenge.doctorscatalog.utils
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -11,7 +11,6 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import java.lang.IllegalArgumentException
 import java.lang.Thread.sleep
 
 @ExperimentalCoroutinesApi
