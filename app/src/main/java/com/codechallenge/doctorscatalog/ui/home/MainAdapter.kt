@@ -13,6 +13,9 @@ import com.codechallenge.doctorscatalog.ui.home.viewholder.VisitedViewHolder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import javax.inject.Inject
+import kotlin.concurrent.thread
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 class MainAdapter @Inject constructor() :
     PagingDataAdapter<Doctor, RecyclerView.ViewHolder>(DiffCallback()) {
@@ -79,22 +82,23 @@ class MainAdapter @Inject constructor() :
         }
     }
 
-    fun searchDoctor(query: String, scrollTo: (position: Int) -> Unit) {
-        val snapshot = snapshot()
-        var isFound = false
-        for (index in 0..snapshot.lastIndex) {
-            val currentDoctor = snapshot[index]
-            currentDoctor?.let { doctor ->
-                doctor.name?.let { name ->
-                    if (name.contains(query, true)) {
-                        scrollTo.invoke(index)
-                        isFound = true
-                        return@let
+    suspend fun searchDoctor(query: String): Int {
+        return suspendCoroutine {
+            thread {
+                val snapshot = snapshot()
+                for (index in 0..snapshot.lastIndex) {
+                    val currentDoctor = snapshot[index]
+                    currentDoctor?.let { doctor ->
+                        doctor.name?.let { name ->
+                            if (name.contains(query, true)) {
+                                it.resume(index)
+                                return@thread
+                            }
+                        }
                     }
                 }
-                if (isFound) return@let
+                it.resume(-1)
             }
-            if (isFound) return
         }
     }
 }

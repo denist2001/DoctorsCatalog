@@ -129,10 +129,13 @@ class MainFragment : Fragment(R.layout.main_fragment) {
         }
     }
 
-    private fun searchDoctorBy(query: String?) {
+    private suspend fun searchDoctorBy(query: String?) {
         if (!query.isNullOrEmpty()) {
-            mainAdapter.searchDoctor(query) { index ->
+            val index = mainAdapter.searchDoctor(query)
+            if (index >= 0) {
                 linearLayoutManager.scrollToPositionWithOffset(index + 3, 20)
+            } else {
+                Toast.makeText(requireContext(), "No matches found", Toast.LENGTH_LONG).show()
             }
         }
     }
