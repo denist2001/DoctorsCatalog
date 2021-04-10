@@ -28,8 +28,21 @@ jobs:
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
-    - name: Publish to GitHub Packages
-      run: gradle publish
-      env:
-        USERNAME: ${{ github.actor }}
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #- name: Publish to GitHub Packages
+    #  run: gradle publish
+    #  env:
+    #    USERNAME: ${{ github.actor }}
+    #    TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  unitTests:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run unit tests
+      run: gradle test
+      
+  uiTests:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run ui tests
+      run: gradle androidTest
